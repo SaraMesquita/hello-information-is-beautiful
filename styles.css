@@ -154,11 +154,14 @@ h1 {
     The negative starting position keeps the colour hidden.
   */
 
-  clip-path: polygon(
-    0% 0%,
-    -10% 0%,
-    -10% 100%,
-    0% 100%
+  clip-path: var(
+    --wave-polygon,
+    polygon(
+      0% 0%,
+      -10% 0%,
+      -10% 100%,
+      0% 100%
+    )
   );
 
   pointer-events: none;
