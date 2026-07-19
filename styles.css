@@ -16,13 +16,16 @@ html {
 
 body {
   margin: 0;
+
   background: var(--background);
   color: var(--foreground);
+
   font-family:
     Inter,
     Arial,
     Helvetica,
     sans-serif;
+
   line-height: 1.5;
 }
 
@@ -31,18 +34,24 @@ main {
   margin-inline: auto;
 }
 
+/* Hero */
+
 .hero {
   min-height: 100vh;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   padding-block: 80px;
 }
 
 .eyebrow,
 .section-number {
   margin: 0 0 24px;
+
   color: var(--accent);
+
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -50,27 +59,135 @@ main {
 }
 
 h1 {
-  max-width: 950px;
+  max-width: 1050px;
   margin: 0;
-  font-size: clamp(4rem, 11vw, 9rem);
+
+  font-size: clamp(4rem, 10.5vw, 9rem);
   font-weight: 700;
   letter-spacing: -0.065em;
   line-height: 0.86;
 }
 
+.hello-line,
+.beautiful-wave {
+  display: block;
+}
+
+/*
+  The original text remains black beneath the colour layer.
+*/
+
+.beautiful-wave {
+  position: relative;
+
+  width: 100%;
+
+  color: var(--foreground);
+
+  isolation: isolate;
+}
+
+/*
+  This pseudo-element contains a duplicate of the phrase.
+
+  The colour is clipped to the shape of the letters, while
+  JavaScript progressively changes its clip-path.
+*/
+
+.beautiful-wave::after {
+  content: attr(data-text);
+
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  color: transparent;
+
+  background-image:
+    radial-gradient(
+      circle at 12% 42%,
+      rgba(255, 230, 113, 0.75) 0%,
+      rgba(255, 230, 113, 0) 24%
+    ),
+    radial-gradient(
+      circle at 38% 68%,
+      rgba(243, 123, 87, 0.65) 0%,
+      rgba(243, 123, 87, 0) 25%
+    ),
+    radial-gradient(
+      circle at 66% 35%,
+      rgba(100, 201, 196, 0.55) 0%,
+      rgba(100, 201, 196, 0) 25%
+    ),
+    linear-gradient(
+      90deg,
+      #f4c43a 0%,
+      #f29a32 14%,
+      #ee7650 27%,
+      #df506f 40%,
+      #c74797 52%,
+      #8963bd 64%,
+      #3f91ca 76%,
+      #42bdbe 88%,
+      #6abe63 100%
+    );
+
+  background-size:
+    36% 180%,
+    42% 180%,
+    38% 180%,
+    100% 100%;
+
+  background-position:
+    -12% 50%,
+    42% 50%,
+    106% 50%,
+    0 50%;
+
+  background-repeat: no-repeat;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /*
+    JavaScript replaces this value immediately.
+    The negative starting position keeps the colour hidden.
+  */
+
+  clip-path: polygon(
+    0% 0%,
+    -10% 0%,
+    -10% 100%,
+    0% 100%
+  );
+
+  pointer-events: none;
+  will-change: clip-path, background-position;
+}
+
 .introduction {
   max-width: 680px;
   margin: 48px 0 32px;
+
   color: var(--muted);
+
   font-size: clamp(1.15rem, 2vw, 1.55rem);
 }
 
 .button {
   align-self: flex-start;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+
   padding: 14px 20px;
+
   border: 1px solid var(--foreground);
+
   color: var(--foreground);
   text-decoration: none;
+
   transition:
     background 180ms ease,
     color 180ms ease;
@@ -81,15 +198,20 @@ h1 {
   color: var(--background);
 }
 
+/* Application sections */
+
 .section {
   min-height: 70vh;
+
   padding-block: 120px;
+
   border-top: 1px solid rgba(23, 23, 23, 0.22);
 }
 
 h2 {
   max-width: 850px;
   margin: 0 0 36px;
+
   font-size: clamp(2.8rem, 7vw, 6rem);
   letter-spacing: -0.055em;
   line-height: 0.95;
@@ -100,6 +222,31 @@ h2 {
   font-size: 1.25rem;
 }
 
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .beautiful-wave::after {
+    clip-path: polygon(
+      0% 0%,
+      110% 0%,
+      110% 100%,
+      0% 100%
+    );
+
+    background-position:
+      -12% 50%,
+      42% 50%,
+      106% 50%,
+      0 50%;
+  }
+}
+
+/* Mobile */
+
 @media (max-width: 600px) {
   main {
     width: min(calc(100% - 32px), var(--max-width));
@@ -107,6 +254,15 @@ h2 {
 
   .hero {
     min-height: 90vh;
+    padding-block: 56px;
+  }
+
+  h1 {
+    font-size: clamp(3.7rem, 17vw, 6rem);
+  }
+
+  .introduction {
+    margin-top: 36px;
   }
 
   .section {
