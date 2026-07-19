@@ -58,7 +58,12 @@ main {
   text-transform: uppercase;
 }
 
-h1 {
+/* Main heading */
+
+.hero-title {
+  position: relative;
+
+  width: 100%;
   max-width: 1050px;
   margin: 0;
 
@@ -68,104 +73,122 @@ h1 {
   line-height: 0.86;
 }
 
-.hello-line,
-.beautiful-wave {
+.title-base,
+.title-colour {
+  display: block;
+  width: 100%;
+}
+
+.title-base > span,
+.title-colour > span {
   display: block;
 }
 
-/*
-  The original text remains black beneath the colour layer.
-*/
-
-.beautiful-wave {
+.title-base {
   position: relative;
-
-  width: 100%;
+  z-index: 1;
 
   color: var(--foreground);
-
-  isolation: isolate;
 }
 
 /*
-  This pseudo-element contains a duplicate of the phrase.
-
-  The colour is clipped to the shape of the letters, while
-  JavaScript progressively changes its clip-path.
+  The colour layer is an exact duplicate of the black heading.
+  It sits over the black text and is only visible inside the
+  moving clip-path band.
 */
 
-.beautiful-wave::after {
-  content: attr(data-text);
-
+.title-colour {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 2;
 
   color: transparent;
 
   background-image:
-    radial-gradient(
-      circle at 12% 42%,
-      rgba(255, 230, 113, 0.75) 0%,
-      rgba(255, 230, 113, 0) 24%
-    ),
-    radial-gradient(
-      circle at 38% 68%,
-      rgba(243, 123, 87, 0.65) 0%,
-      rgba(243, 123, 87, 0) 25%
-    ),
-    radial-gradient(
-      circle at 66% 35%,
-      rgba(100, 201, 196, 0.55) 0%,
-      rgba(100, 201, 196, 0) 25%
-    ),
     linear-gradient(
       90deg,
-      #f4c43a 0%,
-      #f29a32 14%,
-      #ee7650 27%,
-      #df506f 40%,
-      #c74797 52%,
-      #8963bd 64%,
-      #3f91ca 76%,
-      #42bdbe 88%,
-      #6abe63 100%
+      #f5c443 0%,
+      #f2a13a 14%,
+      #ef7a54 27%,
+      #ed5f7f 40%,
+      #cf4f9f 53%,
+      #9367be 66%,
+      #4d95cf 78%,
+      #44bdc1 89%,
+      #69bc67 100%
     );
 
-  background-size:
-    36% 180%,
-    42% 180%,
-    38% 180%,
-    100% 100%;
-
-  background-position:
-    -12% 50%,
-    42% 50%,
-    106% 50%,
-    0 50%;
-
+  background-size: 100% 100%;
+  background-position: center;
   background-repeat: no-repeat;
 
   -webkit-background-clip: text;
   background-clip: text;
 
-  /*
-    JavaScript replaces this value immediately.
-    The negative starting position keeps the colour hidden.
-  */
-
-  clip-path: var(
-    --wave-polygon,
-    polygon(
-      0% 0%,
-      -10% 0%,
-      -10% 100%,
-      0% 100%
-    )
+  clip-path: polygon(
+    -25% 0%,
+    -8% 0%,
+    -5% 16%,
+    -9% 34%,
+    -4% 52%,
+    -8% 70%,
+    -5% 86%,
+    -8% 100%,
+    -25% 100%
   );
 
+  animation:
+    colour-pass 3.2s
+    cubic-bezier(0.65, 0, 0.35, 1)
+    0.5s
+    forwards;
+
   pointer-events: none;
-  will-change: clip-path, background-position;
+  will-change: clip-path;
+}
+
+@keyframes colour-pass {
+  0% {
+    clip-path: polygon(
+      -25% 0%,
+      -8% 0%,
+      -5% 16%,
+      -9% 34%,
+      -4% 52%,
+      -8% 70%,
+      -5% 86%,
+      -8% 100%,
+      -25% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      41% 0%,
+      58% 0%,
+      61% 16%,
+      57% 34%,
+      62% 52%,
+      58% 70%,
+      61% 86%,
+      58% 100%,
+      41% 100%
+    );
+  }
+
+  100% {
+    clip-path: polygon(
+      108% 0%,
+      125% 0%,
+      128% 16%,
+      124% 34%,
+      129% 52%,
+      125% 70%,
+      128% 86%,
+      125% 100%,
+      108% 100%
+    );
+  }
 }
 
 .introduction {
@@ -225,26 +248,16 @@ h2 {
   font-size: 1.25rem;
 }
 
-/* Reduced motion */
+/* Accessibility */
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
-  .beautiful-wave::after {
-    clip-path: polygon(
-      0% 0%,
-      110% 0%,
-      110% 100%,
-      0% 100%
-    );
-
-    background-position:
-      -12% 50%,
-      42% 50%,
-      106% 50%,
-      0 50%;
+  .title-colour {
+    display: none;
+    animation: none;
   }
 }
 
@@ -260,7 +273,7 @@ h2 {
     padding-block: 56px;
   }
 
-  h1 {
+  .hero-title {
     font-size: clamp(3.7rem, 17vw, 6rem);
   }
 
