@@ -528,7 +528,7 @@ p {
 }
 
 .cv-panel h3 {
-  max-width: 15ch;
+  max-width: 20ch;
   margin: 0 0 2rem;
 
   font-size: clamp(2rem, 4vw, 4rem);
