@@ -657,6 +657,41 @@ p {
   line-height: 1.08;
 }
 
+/* =========================================================
+   Story layout
+========================================================= */
+
+.story-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.story-mosaic {
+  position: sticky;
+  top: 2rem;
+
+  width: 100%;
+  margin: 0;
+}
+
+.story-mosaic img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  border-radius: 10px;
+}
+
+.story-caption {
+  margin: 1rem 0 0;
+
+  color: var(--muted);
+
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
 
 /* =========================================================
    11. Accessibility
@@ -779,13 +814,38 @@ p {
     margin-bottom: 2.5rem;
   }
 
-  .section-heading .button {
-    width: 100%;
-  }
-
+  .section-heading .button,
   .button {
     width: 100%;
   }
+
+  /* Story mosaic */
+
+  .story-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .story-mosaic {
+    position: static;
+
+    width: 100%;
+    margin: 0;
+  }
+
+  .story-mosaic img {
+    width: 100%;
+    height: auto;
+  }
+
+  .story-caption {
+    margin-top: 0.75rem;
+
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+
+  /* Unconventional CV */
 
   .cv-introduction {
     margin-bottom: 2.5rem;
@@ -833,7 +893,6 @@ p {
     font-size: 1.5rem;
   }
 }
-
 
 /* =========================================================
    14. Very small screens
