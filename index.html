@@ -155,19 +155,316 @@
       </div>
     </section>
 
-        <section id="cv" class="section">
+       <section id="cv" class="section cv-section">
+  <div class="section-heading">
+    <div>
       <p class="section-number">02</p>
 
       <h2>
         Unconventional CV
       </h2>
+    </div>
 
-      <div class="section-content">
+    <a
+      class="button button-secondary"
+      href="Sara_Mesquita_CV.pdf"
+      download
+    >
+      <span>Download conventional CV</span>
+      <span aria-hidden="true">↓</span>
+    </a>
+  </div>
 
-        <!-- Download button will go here -->
+  <div class="section-content">
+    <p class="cv-introduction">
+      The conventional version lists roles, degrees and publications.
+      This one follows the questions, communities and creative detours
+      that shaped how I work.
+    </p>
 
+    <div class="cv-layout">
+      <div
+        class="cv-navigation"
+        role="tablist"
+        aria-label="Career highlights"
+      >
+        <button
+          class="cv-tab is-active"
+          type="button"
+          role="tab"
+          id="tab-dashboard"
+          aria-selected="true"
+          aria-controls="panel-dashboard"
+          data-cv-panel="dashboard"
+        >
+          <span class="cv-tab__date">2017–2018</span>
+          <span class="cv-tab__title">
+            Learning that dashboards can matter
+          </span>
+        </button>
+
+        <button
+          class="cv-tab"
+          type="button"
+          role="tab"
+          id="tab-questions"
+          aria-selected="false"
+          aria-controls="panel-questions"
+          data-cv-panel="questions"
+        >
+          <span class="cv-tab__date">2020–2026</span>
+          <span class="cv-tab__title">
+            Learning to ask the questions
+          </span>
+        </button>
+
+        <button
+          class="cv-tab"
+          type="button"
+          role="tab"
+          id="tab-data"
+          aria-selected="false"
+          aria-controls="panel-data"
+          data-cv-panel="data"
+        >
+          <span class="cv-tab__date">2023–2024</span>
+          <span class="cv-tab__title">
+            Expanding what data could become
+          </span>
+        </button>
+
+        <button
+          class="cv-tab"
+          type="button"
+          role="tab"
+          id="tab-community"
+          aria-selected="false"
+          aria-controls="panel-community"
+          data-cv-panel="community"
+        >
+          <span class="cv-tab__date">2018–Present</span>
+          <span class="cv-tab__title">
+            Building the community I wanted to find
+          </span>
+        </button>
+
+        <button
+          class="cv-tab"
+          type="button"
+          role="tab"
+          id="tab-now"
+          aria-selected="false"
+          aria-controls="panel-now"
+          data-cv-panel="now"
+        >
+          <span class="cv-tab__date">Now</span>
+          <span class="cv-tab__title">
+            Making more room for creative work
+          </span>
+        </button>
       </div>
-    </section>
+
+      <div class="cv-panels">
+        <article
+          class="cv-panel is-active"
+          id="panel-dashboard"
+          role="tabpanel"
+          aria-labelledby="tab-dashboard"
+          data-cv-content="dashboard"
+        >
+          <p class="cv-panel__role">
+            Business Intelligence Developer
+          </p>
+
+          <h3>
+            Learning that dashboards can matter
+          </h3>
+
+          <p>
+            My introduction to data visualisation happened in a hospital
+            in Porto, where I designed and built dashboards for clinical
+            and operational teams. I spent long hours learning Power BI
+            and saw how visual information could support better decisions
+            and, indirectly, improve patients' lives.
+          </p>
+
+          <p>
+            I also began to notice the limits of the tools I was using,
+            particularly when it came to visual design and exploration.
+            That frustration became curiosity.
+          </p>
+
+          <div class="cv-skills">
+            <span>Clinical data</span>
+            <span>Dashboards</span>
+            <span>Power BI</span>
+            <span>Decision support</span>
+            <span>Stakeholder needs</span>
+          </div>
+        </article>
+
+        <article
+          class="cv-panel"
+          id="panel-questions"
+          role="tabpanel"
+          aria-labelledby="tab-questions"
+          data-cv-content="questions"
+          hidden
+        >
+          <p class="cv-panel__role">
+            PhD in Global Public Health
+          </p>
+
+          <h3>
+            Learning to ask the questions
+          </h3>
+
+          <p>
+            I wanted to do more than answer questions handed to me, so I
+            began a PhD in a computational and quantitative research
+            environment. Over almost six years, I studied human behaviour,
+            antibiotic prescribing and infectious diseases using datasets
+            of very different scales.
+          </p>
+
+          <p>
+            I learned statistics, modelling and research design, but the
+            most important lesson was how to ask bolder questions, and how
+            to recognise when a technically sophisticated answer still
+            fails to communicate clearly.
+          </p>
+
+          <div class="cv-skills">
+            <span>Research</span>
+            <span>Statistics</span>
+            <span>Python</span>
+            <span>Data cleaning</span>
+            <span>Scientific writing</span>
+          </div>
+        </article>
+
+        <article
+          class="cv-panel"
+          id="panel-data"
+          role="tabpanel"
+          aria-labelledby="tab-data"
+          data-cv-content="data"
+          hidden
+        >
+          <p class="cv-panel__role">
+            Fulbright Visiting Scholar and complexity student
+          </p>
+
+          <h3>
+            Expanding what data could become
+          </h3>
+
+          <p>
+            At MIT's Civic Data Design Lab, I encountered a broader
+            language for working with data: exhibitions, installations,
+            sound, civic technology and participatory experiences.
+          </p>
+
+          <p>
+            A four-week summer school at the Santa Fe Institute added
+            another layer, immersing me in complexity science and
+            interdisciplinary thinking. Together, these experiences
+            changed my sense of what research could produce and who it
+            could reach.
+          </p>
+
+          <div class="cv-skills">
+            <span>Civic data</span>
+            <span>Complexity</span>
+            <span>Exhibitions</span>
+            <span>Experimentation</span>
+            <span>Interdisciplinary work</span>
+          </div>
+        </article>
+
+        <article
+          class="cv-panel"
+          id="panel-community"
+          role="tabpanel"
+          aria-labelledby="tab-community"
+          data-cv-content="community"
+          hidden
+        >
+          <p class="cv-panel__role">
+            Co-founder, Data Visualization Lisboa
+          </p>
+
+          <h3>
+            Building the community I wanted to find
+          </h3>
+
+          <p>
+            I co-founded Data Visualization Lisboa with a friend I met at
+            the Information+ conference in 2018. What began as a meetup
+            became a community of designers, storytellers, coders,
+            illustrators and researchers, all working with numbers in
+            different ways.
+          </p>
+
+          <p>
+            Together, we organised events, workshops, interviews, online
+            talks and the <em>Pastel de Data</em> newsletter. Building the
+            community taught me how to curate people and ideas, coordinate
+            a team and create the conditions for others to share their work.
+          </p>
+
+          <div class="cv-skills">
+            <span>Community building</span>
+            <span>Editorial curation</span>
+            <span>Events</span>
+            <span>Newsletters</span>
+            <span>Teamwork</span>
+          </div>
+        </article>
+
+        <article
+          class="cv-panel"
+          id="panel-now"
+          role="tabpanel"
+          aria-labelledby="tab-now"
+          data-cv-content="now"
+          hidden
+        >
+          <p class="cv-panel__role">
+            Researcher, teacher and studio founder
+          </p>
+
+          <h3>
+            Making more room for creative work
+          </h3>
+
+          <p>
+            I completed my PhD while continuing to teach Public Health and
+            Epidemiology and becoming a mother. It was a demanding period
+            that strengthened my independence, resilience and ability to
+            work through deadlines and fluctuating workloads.
+          </p>
+
+          <p>
+            It also clarified what I want next: to give visual
+            communication, editorial thinking and creative experimentation
+            a more central place in my work. I continue to teach data
+            visualisation workshops and attend them as a participant,
+            because I want to keep learning while creating more.
+          </p>
+
+          <div class="cv-skills">
+            <span>Independent work</span>
+            <span>Teaching</span>
+            <span>Adaptability</span>
+            <span>Editorial thinking</span>
+            <span>Creative ambition</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section id="story" class="section">
       <p class="section-number">03</p>
