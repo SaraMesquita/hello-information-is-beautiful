@@ -819,6 +819,39 @@ p {
   }
 }
 
+/* =========================================================
+   Graphic section
+========================================================= */
+
+.graphic-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 460px);
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.graphic-text {
+  min-width: 0;
+}
+
+.graphic-image {
+  margin: 0;
+
+  position: sticky;
+  top: 1rem;
+}
+
+.graphic-image img {
+  display: block;
+
+  width: 100%;
+  max-width: 420px;      /* controls the final size */
+  height: auto;
+
+  margin-left: auto;     /* keeps it aligned to the right */
+
+  border-radius: 12px;
+}
 
 /* =========================================================
    12. Tablet
