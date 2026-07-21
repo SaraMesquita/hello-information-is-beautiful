@@ -671,7 +671,8 @@ p {
 
 .story-mosaic {
   position: sticky;
-  top: 2rem;
+  /*top: 2rem;*/
+   top: 0.5rem;
 
   width: 100%;
   margin: 0;
