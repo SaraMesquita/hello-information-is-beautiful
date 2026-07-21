@@ -845,7 +845,7 @@ p {
   display: block;
 
   width: 100%;
-  max-width: 300px;      /* controls the final size */
+  max-width: 200px;      /* controls the final size */
   height: auto;
 
   margin-left: auto;     /* keeps it aligned to the right */
