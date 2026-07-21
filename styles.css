@@ -415,9 +415,10 @@ p {
 }
 
 .cv-introduction {
-  max-width: 720px;
-  margin: 0 0 3.5rem;
-
+  width: 100%;
+  max-width: none;
+  margin-bottom: 3rem;
+   
   color: var(--muted);
 
   font-size: clamp(1.1rem, 1.8vw, 1.45rem);
