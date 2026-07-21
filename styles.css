@@ -432,13 +432,6 @@ p {
   align-items: start;
 }
 
-/*.cv-layout {
-  display: grid;
-   grid-template-columns: 1fr 360px;
-  /*grid-template-columns:
-    minmax(250px, 0.8fr)
-    minmax(0, 1.5fr);*/
-
   gap: clamp(2.5rem, 6vw, 6rem);
   align-items: start;
 }
@@ -707,25 +700,37 @@ p {
    Extras
 ========================================================= */
 
+#visualisations .section-content {
+  width: 100%;
+  max-width: none;
+}
+
 .extras-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 460px;
-  gap: clamp(3rem, 6vw, 6rem);
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 460px);
+  gap: clamp(2.5rem, 5vw, 5rem);
   align-items: start;
 }
 
+.extras-text {
+  min-width: 0;
+}
+
 .extras-introduction {
-  font-size: 1.2rem;
+  margin-bottom: 2rem;
+
   color: var(--muted);
 
-  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
 .extras-image {
-  margin: 0;
-
   position: sticky;
   top: 1rem;
+
+  width: 100%;
+  margin: 0;
 }
 
 .extras-image img {
@@ -733,12 +738,13 @@ p {
   width: 100%;
   height: auto;
 
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 12px;
-  border: 1px solid rgba(0,0,0,.08);
 }
 
 .extras-cards {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 1.25rem;
 
   margin-top: 3rem;
@@ -746,32 +752,38 @@ p {
 
 .extra-card {
   display: block;
-
+  width: 100%;
   padding: 1.5rem;
 
-  border: 1px solid rgba(0,0,0,.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 
-  transition: .25s ease;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .extra-card:hover {
-  transform: translateY(-3px);
   border-color: var(--accent);
+  transform: translateY(-3px);
 }
 
 .extra-card h3 {
-  margin-bottom: .75rem;
+  margin: 0 0 0.75rem;
 
   font-size: 1.25rem;
+  line-height: 1.2;
 }
 
 .extra-card p {
   margin-bottom: 1rem;
 
   color: var(--muted);
+
+  font-size: 1rem;
+  line-height: 1.55;
 }
 
 .extra-card span {
@@ -977,17 +989,6 @@ p {
   .content-card h3 {
     font-size: 1.5rem;
   }
-
-   .extras-layout {
-     grid-template-columns: 1fr;
-   }
-
-   .extras-image {
-     position: static;
-   
-     order: -1;
-   }
-
 }
 /* =========================================================
    14. Very small screens
