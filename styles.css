@@ -426,9 +426,10 @@ p {
 
 .cv-layout {
   display: grid;
-  grid-template-columns:
+   grid-template-columns: 1fr 360px;
+  /*grid-template-columns:
     minmax(250px, 0.8fr)
-    minmax(0, 1.5fr);
+    minmax(0, 1.5fr);*/
 
   gap: clamp(2.5rem, 6vw, 6rem);
   align-items: start;
