@@ -948,6 +948,15 @@ p {
   .content-grid {
     grid-template-columns: 1fr;
   }
+
+   .social-copy-label {
+     margin-bottom: 1rem;
+   }
+   
+   .social-copy-opening {
+     font-size: 1.05rem;
+     line-height: 1.55;
+   }
 }
 
 
