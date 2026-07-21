@@ -794,44 +794,65 @@ p {
    Footer
 ========================================================= */
 
-
 .footer {
-  margin-top: 8rem;
-  padding: 3rem 0 4rem;
+  margin-top: 10rem;
+  padding: 6rem 0;
 
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid var(--border);
 
   text-align: center;
 }
 
-.footer p {
-  margin: 0;
+.footer-title {
+  margin-bottom: 1.25rem;
+
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 0.95;
 }
 
-.footer p + p {
-  margin-top: 1rem;
+.footer-intro {
+  margin: 0 auto 1rem;
+
+  color: var(--muted);
+
+  font-size: 1.15rem;
+}
+
+.footer-message {
+  max-width: 640px;
+  margin: 0 auto 3rem;
+
+  font-size: 1.15rem;
+  line-height: 1.7;
 }
 
 .footer-links {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.9rem;
 
   flex-wrap: wrap;
 
-  color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .footer-links a {
   color: inherit;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+
+  transition:
+    color var(--transition-fast),
+    opacity var(--transition-fast);
 }
 
 .footer-links a:hover {
-  opacity: 0.65;
+  color: var(--accent);
+}
+
+.footer-links span {
+  color: var(--muted);
 }
 
 /* =========================================================
