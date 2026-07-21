@@ -1109,7 +1109,133 @@ p {
   .content-card h3 {
     font-size: 1.5rem;
   }
+
+  /* Section 03: Moon graphic */
+
+  .graphic-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .graphic-content,
+  .graphic-text,
+  .social-copy,
+  .graphic-image {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .graphic-image {
+    position: static;
+    margin: 0;
+  }
+
+  .graphic-image img {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+    margin: 0 auto;
+
+    border-radius: 10px;
+  }
+
+  .graphic-credit {
+    margin-top: 0.75rem;
+
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .social-copy {
+    width: 100%;
+    padding: 1.25rem 0;
+  }
+
+  .social-copy-label {
+    margin-bottom: 1rem;
+  }
+
+  .social-copy-opening {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  /* Section 05: Curious? Here's more */
+
+  .extras-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .extras-text,
+  .extras-image,
+  .extras-cards {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .extras-image {
+    position: static;
+
+    width: 100%;
+    margin: 0;
+  }
+
+  .extras-image img {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+    margin: 0 auto;
+
+    border-radius: 10px;
+  }
+
+  .extras-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    margin-top: 2rem;
+  }
+
+  .extra-card {
+    width: 100%;
+    padding: 1.25rem;
+  }
+
+  .extra-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .extra-card p {
+    font-size: 0.96rem;
+    line-height: 1.55;
+  }
+
+  /* Footer */
+
+  .footer {
+    margin-top: 6rem;
+    padding: 4rem 0;
+  }
+
+  .footer-title {
+    font-size: clamp(2.4rem, 12vw, 3.5rem);
+  }
+
+  .footer-intro,
+  .footer-message {
+    font-size: 1rem;
+  }
 }
+
 /* =========================================================
    14. Very small screens
 ========================================================= */
