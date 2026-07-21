@@ -889,12 +889,31 @@ p {
   display: block;
 
   width: 100%;
-  max-width: 400px;      /* controls the final size */
+  max-width: 400px;
   height: auto;
 
-  margin-left: auto;     /* keeps it aligned to the right */
+  margin-left: auto;
 
   border-radius: 12px;
+}
+
+/* ADD THIS HERE */
+
+.graphic-credit {
+  margin-top: 1rem;
+
+  color: var(--muted);
+
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.graphic-credit a {
+  color: inherit;
+
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.15em;
 }
 
 /* =========================================================
