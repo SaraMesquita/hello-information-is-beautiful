@@ -1,5 +1,15 @@
 "use strict";
 
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+window.addEventListener("load", () => {
+  if (!window.location.hash) {
+    window.scrollTo(0, 0);
+  }
+});
+
 /* =========================================================
    Unconventional CV
 ========================================================= */
@@ -32,7 +42,6 @@ cvTabs.forEach((tab) => {
   });
 });
 
-
 /* =========================================================
    Hero title animation
 ========================================================= */
@@ -40,9 +49,7 @@ cvTabs.forEach((tab) => {
 const animatedTitle = document.querySelector(".title-colour");
 
 if (animatedTitle) {
-
   function replayTitleAnimation() {
-
     animatedTitle.style.animation = "none";
 
     // Force browser reflow
